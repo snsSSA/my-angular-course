@@ -11,6 +11,8 @@ export class AlbumListComponent implements OnInit {
     numbers: number[];
     titleCounter = 1;
 
+    albumLabel: string;
+
     constructor() {}
 
     ngOnInit(): void {
@@ -78,5 +80,15 @@ export class AlbumListComponent implements OnInit {
         }, 6000);
 
         console.log(this.albumsArray);
+    }
+
+    parentFunctionHandler(album) {
+        alert(
+            'Album ' +
+                album.album_name +
+                ' was sent from the album card component'
+        );
+
+        this.albumLabel = `${album.id} ${album.album_name}`;
     }
 }
